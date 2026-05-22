@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from 'react';
 import { ASSET_CONFIG } from '@/lib/constants';
-import { formatAED } from '@/lib/formatters';
+import { formatAEDSafe } from '@/lib/formatters';
+import { parseInputValue } from '@/lib/validators';
 import { calculateGoldValue, calculateSilverValue } from '@/lib/zakatEngine';
 import type {
   AssetDetails,
@@ -30,8 +31,7 @@ export interface StepAssetDetailsProps {
 }
 
 function parseAmount(value: string): number {
-  const parsed = parseFloat(value.replace(/,/g, ''));
-  return Number.isFinite(parsed) ? Math.max(0, parsed) : 0;
+  return parseInputValue(value);
 }
 
 const defaultProperty: PropertyAsset = {
@@ -55,7 +55,7 @@ export function StepAssetDetails({
   const config = ASSET_CONFIG[currentAsset];
   const [receivableRepayable, setReceivableRepayable] = useState<
     'yes' | 'uncertain'
-  >('yes');
+  >(assetDetails.receivablesRepayable ?? 'yes');
   const [businessInventory, setBusinessInventory] = useState('');
   const [businessReceivables, setBusinessReceivables] = useState('');
 
@@ -145,8 +145,7 @@ export function StepAssetDetails({
 
         <Input
           label="Weight in grams"
-          type="number"
-          min={0}
+          isGrams
           value={gold.weightGrams || ''}
           prefix=""
           onChange={(e) =>
@@ -164,14 +163,14 @@ export function StepAssetDetails({
           <>
             <div className="flex items-center gap-2 text-sm">
               <span>
-                Live gold price: {formatAED(goldPriceAED)}/gram
+                Live gold price: {formatAEDSafe(goldPriceAED)}/gram
               </span>
               <Badge variant={isLivePrice ? 'live' : 'estimated'}>
                 {isLivePrice ? 'Live price' : 'Estimated price'}
               </Badge>
             </div>
             <p className="text-sm font-medium text-mal-purple">
-              Estimated value: {formatAED(goldEstimated)}
+              Estimated value: {formatAEDSafe(goldEstimated)}
             </p>
           </>
         )}
@@ -224,8 +223,6 @@ export function StepAssetDetails({
           {property.type === 'investment' && (
             <Input
               label="Approximate market value"
-              type="number"
-              min={0}
               value={property.estimatedValue || ''}
               onChange={(e) =>
                 updateProperty(index, {
@@ -238,8 +235,6 @@ export function StepAssetDetails({
             <Input
               label="Annual rental income"
               subtitle="Only income is zakatable, not property value"
-              type="number"
-              min={0}
               value={property.rentalIncomeAnnual || ''}
               onChange={(e) =>
                 updateProperty(index, {
@@ -261,8 +256,6 @@ export function StepAssetDetails({
       <Input
         label="Value of trading inventory and stock"
         tooltip="Fixed assets like equipment and machinery are not zakatable"
-        type="number"
-        min={0}
         value={businessInventory}
         onChange={(e) => {
           setBusinessInventory(e.target.value);
@@ -273,8 +266,6 @@ export function StepAssetDetails({
       />
       <Input
         label="Outstanding business receivables"
-        type="number"
-        min={0}
         value={businessReceivables}
         onChange={(e) => {
           setBusinessReceivables(e.target.value);
@@ -294,8 +285,6 @@ export function StepAssetDetails({
             label="Total balance across all accounts"
             subtitle="Include current accounts, savings accounts, fixed deposits, and cash at home"
             tooltip="Foreign currency? Convert to AED at today's rate"
-            type="number"
-            min={0}
             value={assetDetails.cash ?? ''}
             onChange={(e) =>
               onUpdateAssetDetails({ cash: parseAmount(e.target.value) })
@@ -309,8 +298,7 @@ export function StepAssetDetails({
           <div className="space-y-4">
             <Input
               label="Weight in grams"
-              type="number"
-              min={0}
+              isGrams
               prefix=""
               value={assetDetails.silver?.weightGrams ?? ''}
               onChange={(e) =>
@@ -323,13 +311,13 @@ export function StepAssetDetails({
               }
             />
             <div className="flex items-center gap-2 text-sm">
-              <span>Silver price: {formatAED(silverPriceAED)}/gram</span>
+              <span>Silver price: {formatAEDSafe(silverPriceAED)}/gram</span>
               <Badge variant={isLivePrice ? 'live' : 'estimated'}>
                 {isLivePrice ? 'Live price' : 'Estimated price'}
               </Badge>
             </div>
             <p className="text-sm font-medium text-mal-purple">
-              Estimated value: {formatAED(silverEstimated)}
+              Estimated value: {formatAEDSafe(silverEstimated)}
             </p>
           </div>
         );
@@ -339,8 +327,6 @@ export function StepAssetDetails({
             <Input
               label="Approximate current market value"
               tooltip="Include shares, mutual funds, ETFs, and crypto at today's value"
-              type="number"
-              min={0}
               value={assetDetails.investments ?? ''}
               onChange={(e) =>
                 onUpdateAssetDetails({
@@ -366,8 +352,6 @@ export function StepAssetDetails({
           <div className="space-y-4">
             <Input
               label="Total amount"
-              type="number"
-              min={0}
               value={assetDetails.receivables ?? ''}
               onChange={(e) =>
                 onUpdateAssetDetails({
@@ -382,7 +366,10 @@ export function StepAssetDetails({
               <Button
                 variant={receivableRepayable === 'yes' ? 'primary' : 'secondary'}
                 size="sm"
-                onClick={() => setReceivableRepayable('yes')}
+                onClick={() => {
+                  setReceivableRepayable('yes');
+                  onUpdateAssetDetails({ receivablesRepayable: 'yes' });
+                }}
               >
                 Yes
               </Button>
@@ -391,7 +378,10 @@ export function StepAssetDetails({
                   receivableRepayable === 'uncertain' ? 'primary' : 'secondary'
                 }
                 size="sm"
-                onClick={() => setReceivableRepayable('uncertain')}
+                onClick={() => {
+                  setReceivableRepayable('uncertain');
+                  onUpdateAssetDetails({ receivablesRepayable: 'uncertain' });
+                }}
               >
                 Uncertain
               </Button>

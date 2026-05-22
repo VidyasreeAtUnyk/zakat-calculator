@@ -20,6 +20,17 @@
 }
 
 @media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    background: white !important;
+  }
+
   .no-print {
     display: none !important;
   }
@@ -28,8 +39,25 @@
     display: block !important;
   }
 
-  body {
-    background: white !important;
+  .print-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    overflow: visible;
+  }
+
+  .wizard-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  .breakdown-table {
+    width: 100% !important;
+    font-size: 11px;
   }
 
   .print-card {

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { Toggle } from '@/components/ui/Toggle';
+import { parseInputValue } from '@/lib/validators';
 import type { Liabilities } from '@/types/zakat.types';
 
 export interface StepLiabilitiesProps {
@@ -16,8 +17,7 @@ export interface StepLiabilitiesProps {
 }
 
 function parseAmount(value: string): number {
-  const parsed = parseFloat(value.replace(/,/g, ''));
-  return Number.isFinite(parsed) ? Math.max(0, parsed) : 0;
+  return parseInputValue(value);
 }
 
 export function StepLiabilities({
@@ -50,8 +50,6 @@ export function StepLiabilities({
         <div className="space-y-4">
           <Input
             label="Outstanding loans due this year"
-            type="number"
-            min={0}
             value={liabilities.loans || ''}
             onChange={(e) =>
               onUpdateLiabilities({ loans: parseAmount(e.target.value) })
@@ -60,8 +58,6 @@ export function StepLiabilities({
           <Input
             label="Rent or mortgage payments due"
             subtitle="Only the portion due within the next 12 months"
-            type="number"
-            min={0}
             value={liabilities.rentDue || ''}
             onChange={(e) =>
               onUpdateLiabilities({ rentDue: parseAmount(e.target.value) })
@@ -69,8 +65,6 @@ export function StepLiabilities({
           />
           <Input
             label="Other immediate debts"
-            type="number"
-            min={0}
             value={liabilities.otherDebts || ''}
             onChange={(e) =>
               onUpdateLiabilities({ otherDebts: parseAmount(e.target.value) })

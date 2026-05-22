@@ -28,6 +28,8 @@ export interface PropertyAsset {
   rentalIncomeAnnual?: number;
 }
 
+export type ReceivablesRepayable = 'yes' | 'uncertain';
+
 export interface AssetDetails {
   cash?: number;
   gold?: GoldAsset;
@@ -36,6 +38,7 @@ export interface AssetDetails {
   property?: PropertyAsset[];
   business?: number;
   receivables?: number;
+  receivablesRepayable?: ReceivablesRepayable;
 }
 
 export interface Liabilities {

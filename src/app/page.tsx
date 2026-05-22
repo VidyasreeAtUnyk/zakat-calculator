@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { StepAssetDetails } from '@/components/wizard/StepAssetDetails';
 import { StepAssetSelector } from '@/components/wizard/StepAssetSelector';
 import { StepLiabilities } from '@/components/wizard/StepLiabilities';
@@ -8,18 +9,35 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { ProgressBar } from '@/components/ui/ProgressBar';
-import { formatAED } from '@/lib/formatters';
+import { ZakatInfo } from '@/components/ui/ZakatInfo';
+import { formatAEDSafe } from '@/lib/formatters';
 import { useZakatCalculator } from '@/hooks/useZakatCalculator';
 
 export default function Home() {
   const wizard = useZakatCalculator();
+  const wizardContentRef = useRef<HTMLDivElement>(null);
+  const prevStepRef = useRef(wizard.step);
+
+  useEffect(() => {
+    if (prevStepRef.current === 0 && wizard.step === 1) {
+      wizardContentRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+    prevStepRef.current = wizard.step;
+  }, [wizard.step]);
 
   const handlePrint = () => {
     window.print();
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-10">
+    <div
+      ref={wizardContentRef}
+      id="wizard-content"
+      className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-10"
+    >
       {wizard.step > 0 && wizard.step < 4 && (
         <div className="no-print mb-8">
           <ProgressBar currentStep={wizard.step} />
@@ -27,49 +45,46 @@ export default function Home() {
       )}
 
       {wizard.step === 0 && (
-        <section className="relative overflow-hidden text-center">
-          <p
-            className="pointer-events-none absolute inset-0 flex items-center justify-center font-arabic text-[8rem] font-bold text-mal-purple-light/80 sm:text-[12rem]"
-            aria-hidden
-          >
-            زكاة
-          </p>
-          <div className="relative z-10 mx-auto max-w-2xl space-y-6 py-8 sm:py-16">
-            <div className="flex items-center justify-center gap-2">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-mal-purple text-2xl font-semibold text-white">
-                م
-              </div>
-              <span className="text-2xl font-semibold text-mal-purple">mal</span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl">Calculate Your Zakat</h1>
-            <p className="text-mal-gray">
-              A guided, step-by-step calculator based on Islamic scholarly
-              consensus
+        <>
+          <section className="relative overflow-hidden text-center">
+            <p
+              className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 select-none font-arabic text-[120px] text-[#F3EFFD] opacity-40"
+              aria-hidden
+            >
+              زكاة
             </p>
-            <Card className="mx-auto max-w-md text-left">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-sm font-medium">
-                  Current Nisab (85g gold):{' '}
-                  <span className="text-mal-purple">
-                    {formatAED(wizard.nisabThreshold)}
-                  </span>
-                </p>
-                <Badge
-                  variant={wizard.goldPrice.isLive ? 'live' : 'estimated'}
-                >
-                  {wizard.goldPrice.loading
-                    ? 'Loading…'
-                    : wizard.goldPrice.isLive
-                      ? 'Live price'
-                      : 'Estimated price'}
-                </Badge>
-              </div>
-            </Card>
-            <Button size="lg" onClick={wizard.beginCalculation}>
-              Begin Calculation →
-            </Button>
-          </div>
-        </section>
+            <div className="relative z-10 mx-auto max-w-2xl space-y-6 py-8 sm:py-16">
+              <h1 className="text-3xl sm:text-4xl">Calculate Your Zakat</h1>
+              <p className="text-mal-gray">
+                A guided, step-by-step calculator based on Islamic scholarly
+                consensus
+              </p>
+              <Card className="mx-auto max-w-md text-left">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-sm font-medium">
+                    Current Nisab (85g gold):{' '}
+                    <span className="text-mal-purple">
+                      {formatAEDSafe(wizard.nisabThreshold)}
+                    </span>
+                  </p>
+                  <Badge
+                    variant={wizard.goldPrice.isLive ? 'live' : 'estimated'}
+                  >
+                    {wizard.goldPrice.loading
+                      ? 'Loading…'
+                      : wizard.goldPrice.isLive
+                        ? 'Live price'
+                        : 'Estimated price'}
+                  </Badge>
+                </div>
+              </Card>
+              <Button size="lg" onClick={wizard.beginCalculation}>
+                Begin Calculation →
+              </Button>
+            </div>
+          </section>
+          <ZakatInfo />
+        </>
       )}
 
       {wizard.step === 1 && (
