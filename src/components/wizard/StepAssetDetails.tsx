@@ -129,7 +129,7 @@ export function StepAssetDetails({
               }`}
             >
               <p className="text-sm font-semibold">{option.title}</p>
-              <p className="mt-1 text-xs text-mal-gray">{option.desc}</p>
+              <p className="mt-1 text-xs text-mal-gray-dark">{option.desc}</p>
             </button>
           ))}
         </div>
@@ -183,7 +183,7 @@ export function StepAssetDetails({
       {properties.map((property, index) => (
         <Card key={`property-${index}`}>
           <p className="mb-3 font-medium">Property {index + 1}</p>
-          <p className="mb-2 text-sm text-mal-gray">
+          <p className="mb-2 text-sm text-mal-gray-dark">
             What type of property is this?
           </p>
           <div className="mb-4 grid gap-2">
@@ -216,7 +216,7 @@ export function StepAssetDetails({
           </div>
 
           {property.type === 'primary' && (
-            <p className="text-sm text-mal-gray">
+            <p className="text-sm text-mal-gray-dark">
               Primary residence is excluded from Zakat.
             </p>
           )}
@@ -335,7 +335,7 @@ export function StepAssetDetails({
               }
             />
             <Card className="bg-mal-purple-light/30">
-              <p className="text-xs text-mal-gray">
+              <p className="text-xs text-mal-gray-dark">
                 For stocks, scholars recommend calculating Zakat on the
                 zakatable portion (cash + receivables) of the company. Using
                 full market value is a safe estimate.
@@ -387,7 +387,7 @@ export function StepAssetDetails({
               </Button>
             </div>
             {receivableRepayable === 'uncertain' && (
-              <p className="text-xs text-mal-gray">
+              <p className="text-xs text-mal-gray-dark">
                 You may include a conservative estimate of what you expect to
                 recover.
               </p>
@@ -406,7 +406,7 @@ export function StepAssetDetails({
           {config.label} · {subStepIndex + 1} of {totalSubSteps} assets
         </p>
         <h1 className="mt-1 text-2xl text-mal-dark">{config.label}</h1>
-        <p className="mt-2 text-mal-gray">{config.subtitle}</p>
+        <p className="mt-2 text-mal-gray-dark">{config.subtitle}</p>
       </div>
 
       <Card>{renderContent()}</Card>

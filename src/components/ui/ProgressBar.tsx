@@ -24,7 +24,7 @@ export function ProgressBar({
           aria-valuemax={totalSteps}
         />
       </div>
-      <div className="mt-2 flex justify-between gap-1 text-xs text-mal-gray">
+      <div className="mt-2 flex justify-between gap-1 text-xs text-mal-gray-dark">
         {WIZARD_STEPS.map((label, index) => (
           <span
             key={label}

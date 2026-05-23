@@ -23,7 +23,7 @@ export function StepAssetSelector({
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl text-mal-dark">What assets do you own?</h1>
-        <p className="mt-2 text-mal-gray">
+        <p className="mt-2 text-mal-gray-dark">
           Select all that apply. We&apos;ll guide you through each one.
         </p>
       </div>
@@ -59,7 +59,7 @@ export function StepAssetSelector({
               <p className="mt-2 text-sm font-semibold text-mal-dark">
                 {config.label}
               </p>
-              <p className="mt-1 text-xs text-mal-gray">{config.subtitle}</p>
+              <p className="mt-1 text-xs text-mal-gray-dark">{config.subtitle}</p>
             </button>
           );
         })}

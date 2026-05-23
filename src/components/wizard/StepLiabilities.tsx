@@ -32,7 +32,7 @@ export function StepLiabilities({
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl text-mal-dark">Do you have any debts?</h1>
-        <p className="mt-2 text-mal-gray">
+        <p className="mt-2 text-mal-gray-dark">
           Immediate debts due within the next 12 months can be deducted from
           your zakatable wealth.
         </p>

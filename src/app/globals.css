@@ -11,6 +11,11 @@
     @apply bg-mal-gray-light text-mal-dark antialiased;
   }
 
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-mal-gray-dark;
+  }
+
   h1,
   h2,
   h3,

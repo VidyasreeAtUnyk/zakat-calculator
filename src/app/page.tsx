@@ -95,7 +95,7 @@ export default function Home() {
             </p>
             <div className="relative z-10 mx-auto max-w-2xl space-y-6 py-8 sm:py-16">
               <h1 className="text-3xl sm:text-4xl">Calculate Your Zakat</h1>
-              <p className="text-mal-gray">
+              <p className="text-mal-gray-dark">
                 A guided, step-by-step calculator based on Islamic scholarly
                 consensus
               </p>

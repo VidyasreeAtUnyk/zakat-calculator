@@ -11,7 +11,7 @@ const variantClasses = {
   estimated: 'bg-mal-warning-light text-mal-warning',
   success: 'bg-mal-success-light text-mal-success',
   warning: 'bg-mal-warning-light text-mal-warning',
-  neutral: 'bg-mal-gray-light text-mal-gray',
+  neutral: 'bg-mal-gray-light text-mal-gray-dark',
 };
 
 export function Badge({

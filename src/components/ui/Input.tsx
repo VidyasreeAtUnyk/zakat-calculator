@@ -92,10 +92,10 @@ export function Input({
         </label>
         {tooltip && <Tooltip content={tooltip} />}
       </div>
-      {subtitle && <p className="text-xs text-mal-gray">{subtitle}</p>}
+      {subtitle && <p className="text-xs text-mal-gray-dark">{subtitle}</p>}
       <div className="relative">
         {prefix && (
-          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-mal-gray">
+          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-mal-gray-dark">
             {prefix}
           </span>
         )}

@@ -17,7 +17,7 @@ export function Tooltip({ content, className = '' }: TooltipProps) {
         type="button"
         aria-describedby={open ? id : undefined}
         aria-expanded={open}
-        className="flex h-5 w-5 items-center justify-center rounded-full border border-mal-border text-xs text-mal-gray transition-colors hover:border-mal-purple hover:text-mal-purple"
+        className="flex h-5 w-5 items-center justify-center rounded-full border border-mal-border text-xs text-mal-gray-dark transition-colors hover:border-mal-purple hover:text-mal-purple"
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
         onFocus={() => setOpen(true)}

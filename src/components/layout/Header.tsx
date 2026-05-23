@@ -19,7 +19,7 @@ export function Header() {
         <button
           type="button"
           disabled
-          className="cursor-not-allowed rounded-full border border-mal-border px-3 py-1.5 text-xs text-mal-gray"
+          className="cursor-not-allowed rounded-full border border-mal-border px-3 py-1.5 text-xs text-mal-gray-dark"
           title="Arabic language support coming soon"
         >
           عربي — Coming soon

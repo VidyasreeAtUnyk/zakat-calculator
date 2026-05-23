@@ -74,7 +74,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
         <h1 className="text-2xl text-mal-dark">Your Zakat Summary</h1>
 
-        <p className="mt-2 text-mal-gray">
+        <p className="mt-2 text-mal-gray-dark">
 
           Based on the assets and liabilities you entered.
 
@@ -112,7 +112,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
             <div className="flex justify-between">
 
-              <dt className="text-mal-gray">Total Assets</dt>
+              <dt className="text-mal-gray-dark">Total Assets</dt>
 
               <dd className="font-medium">{formatAEDSafe(result.totalAssets)}</dd>
 
@@ -120,7 +120,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
             <div className="flex justify-between">
 
-              <dt className="text-mal-gray">Total Liabilities</dt>
+              <dt className="text-mal-gray-dark">Total Liabilities</dt>
 
               <dd className="font-medium">
 
@@ -148,7 +148,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
             <div className="flex justify-between">
 
-              <dt className="text-mal-gray">Nisab Threshold</dt>
+              <dt className="text-mal-gray-dark">Nisab Threshold</dt>
 
               <dd>{formatAEDSafe(result.nisabThreshold)}</dd>
 
@@ -176,7 +176,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
               {showLargeZakatNote && (
 
-                <p className="mt-2 text-xs text-mal-gray">
+                <p className="mt-2 text-xs text-mal-gray-dark">
 
                   Please consult a scholar for large Zakat obligations
 
@@ -184,7 +184,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
               )}
 
-              <p className="mt-1 text-xs text-mal-gray">
+              <p className="mt-1 text-xs text-mal-gray-dark">
 
                 2.5% of your net zakatable wealth
 
@@ -198,7 +198,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
               <p className="text-sm font-medium text-mal-dark">No Zakat Due</p>
 
-              <p className="mt-2 text-sm text-mal-gray">
+              <p className="mt-2 text-sm text-mal-gray-dark">
 
                 Your net wealth of {formatAEDSafe(result.netZakatableWealth)} is
 
@@ -222,7 +222,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
             <table className="breakdown-table w-full text-left text-sm">
               <thead>
-                <tr className="border-b border-mal-border text-mal-gray">
+                <tr className="border-b border-mal-border text-mal-gray-dark">
                   <th className="pb-2 pr-2">Asset</th>
                   <th className="pb-2 pr-2">Value</th>
                   <th className="pb-2 pr-2">Zakatable</th>
@@ -242,7 +242,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
                           {breakdownLabel(String(row.assetType))}
                         </span>
                         {row.reason ? (
-                          <p className="text-xs text-mal-gray">{row.reason}</p>
+                          <p className="text-xs text-mal-gray-dark">{row.reason}</p>
                         ) : null}
                       </td>
                       <td className="py-3 pr-2">{formatAEDSafe(row.value)}</td>
@@ -252,7 +252,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
                             ✓
                           </span>
                         ) : (
-                          <span className="text-mal-gray" aria-label="Not zakatable">
+                          <span className="text-mal-gray-dark" aria-label="Not zakatable">
                             ✗
                           </span>
                         )}
@@ -290,7 +290,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
       <Card className="wizard-card bg-mal-purple-light/30">
 
-        <p className="text-xs text-mal-gray">
+        <p className="text-xs text-mal-gray-dark">
 
           This calculation assumes your wealth has been held above the Nisab
 
