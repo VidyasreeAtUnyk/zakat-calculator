@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 1180" role="img" aria-label="Mal Zakat Calculator wizard flow">
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -5,7 +6,7 @@
     </marker>
   </defs>
   <rect width="920" height="1180" fill="#FFFFFF"/>
-  <text x="460" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#171717">Mal Zakat Calculator  Wizard Flow</text>
+  <text x="460" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#171717">Mal Zakat Calculator &#8212; Wizard Flow</text>
 
   <!-- Homepage -->
   <rect x="310" y="70" width="300" height="56" rx="16" fill="#351A75"/>
@@ -23,29 +24,29 @@
 
   <!-- Sub steps -->
   <rect x="60" y="340" width="220" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
-  <text x="170" y="370" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Cash &amp; Savings ’ amount</text>
+  <text x="170" y="370" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Cash &amp; Savings &#8594; amount</text>
 
   <rect x="350" y="330" width="220" height="110" rx="12" fill="#F3EFFD" stroke="#351A75"/>
   <text x="460" y="355" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#171717">Gold</text>
   <polygon points="460,370 490,395 460,420 430,395" fill="#FFFFFF" stroke="#351A75" stroke-width="2"/>
   <text x="460" y="399" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">worn?</text>
-  <text x="400" y="430" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6B7280">exempt</text>
-  <text x="520" y="430" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">stored ’ weight</text>
+  <text x="400" y="430" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4B5563">exempt</text>
+  <text x="520" y="430" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">stored &#8594; weight</text>
 
   <rect x="640" y="340" width="220" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
-  <text x="750" y="370" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Silver ’ weight ’ value</text>
+  <text x="750" y="370" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Silver &#8594; weight &#8594; value</text>
 
   <rect x="60" y="410" width="220" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
-  <text x="170" y="440" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Investments ’ value</text>
+  <text x="170" y="440" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Investments &#8594; value</text>
 
   <rect x="350" y="460" width="220" height="110" rx="12" fill="#F3EFFD" stroke="#351A75"/>
   <text x="460" y="485" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#171717">Property</text>
-  <text x="460" y="510" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6B7280">primary ’ excluded</text>
-  <text x="460" y="530" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">investment ’ value</text>
-  <text x="460" y="550" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">rental ’ income</text>
+  <text x="460" y="510" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4B5563">primary &#8594; excluded</text>
+  <text x="460" y="530" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">investment &#8594; value</text>
+  <text x="460" y="550" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">rental &#8594; income</text>
 
   <rect x="640" y="410" width="220" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
-  <text x="750" y="440" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Business ’ inventory</text>
+  <text x="750" y="440" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Business &#8594; inventory</text>
 
   <rect x="350" y="590" width="220" height="64" rx="12" fill="#F3EFFD" stroke="#351A75"/>
   <text x="460" y="615" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Receivables</text>
@@ -77,9 +78,9 @@
   <text x="280" y="1030" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#059669">Eligible</text>
   <text x="280" y="1055" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#171717">Zakat amount + breakdown</text>
 
-  <rect x="480" y="1000" width="320" height="72" rx="16" fill="#F9FAFB" stroke="#6B7280" stroke-width="2"/>
-  <text x="640" y="1030" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">Ineligible</text>
+  <rect x="480" y="1000" width="320" height="72" rx="16" fill="#F9FAFB" stroke="#4B5563" stroke-width="2"/>
+  <text x="640" y="1030" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#4B5563">Ineligible</text>
   <text x="640" y="1055" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#171717">Below Nisab message</text>
 
-  <text x="460" y="1120" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6B7280">Purple = main steps · Light purple = sub-steps · Green = eligible · Gray = excluded</text>
+  <text x="460" y="1120" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4B5563">Purple = main steps &#183; Light purple = sub-steps &#183; Green = eligible &#183; Gray = excluded</text>
 </svg>
