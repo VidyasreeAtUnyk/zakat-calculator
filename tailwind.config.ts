@@ -5,6 +5,8 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/hooks/**/*.{js,ts,jsx,tsx}',
+    './src/lib/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -14,7 +16,7 @@ const config: Config = {
           'purple-light': '#F3EFFD',
           'purple-dark': '#2a1560',
           dark: '#171717',
-          gray: '#6B7280',
+          gray: '#4B5563',
           'gray-light': '#F9FAFB',
           border: '#E5E7EB',
           success: '#059669',

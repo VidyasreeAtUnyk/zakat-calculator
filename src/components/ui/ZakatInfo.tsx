@@ -36,7 +36,7 @@ export function ZakatInfo() {
               {card.icon}
             </div>
             <h3 className="font-semibold text-[#171717]">{card.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">
+            <p className="mt-2 text-sm leading-relaxed text-mal-gray">
               {card.body}
             </p>
           </div>
