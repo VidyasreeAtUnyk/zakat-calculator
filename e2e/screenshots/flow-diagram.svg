@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 1180" role="img" aria-label="Mal Zakat Calculator wizard flow">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#351A75"/>
+    </marker>
+  </defs>
+  <rect width="920" height="1180" fill="#FFFFFF"/>
+  <text x="460" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#171717">Mal Zakat Calculator  Wizard Flow</text>
+
+  <!-- Homepage -->
+  <rect x="310" y="70" width="300" height="56" rx="16" fill="#351A75"/>
+  <text x="460" y="104" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Homepage</text>
+  <line x1="460" y1="126" x2="460" y2="160" stroke="#351A75" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 1 -->
+  <rect x="260" y="160" width="400" height="56" rx="16" fill="#351A75"/>
+  <text x="460" y="194" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Step 1: Asset Selector</text>
+  <line x1="460" y1="216" x2="460" y2="250" stroke="#351A75" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 2 -->
+  <rect x="220" y="250" width="480" height="56" rx="16" fill="#351A75"/>
+  <text x="460" y="284" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Step 2: Asset Details (one sub-step per asset)</text>
+
+  <!-- Sub steps -->
+  <rect x="60" y="340" width="220" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="170" y="370" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Cash &amp; Savings ’ amount</text>
+
+  <rect x="350" y="330" width="220" height="110" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="460" y="355" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#171717">Gold</text>
+  <polygon points="460,370 490,395 460,420 430,395" fill="#FFFFFF" stroke="#351A75" stroke-width="2"/>
+  <text x="460" y="399" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">worn?</text>
+  <text x="400" y="430" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6B7280">exempt</text>
+  <text x="520" y="430" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">stored ’ weight</text>
+
+  <rect x="640" y="340" width="220" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="750" y="370" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Silver ’ weight ’ value</text>
+
+  <rect x="60" y="410" width="220" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="170" y="440" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Investments ’ value</text>
+
+  <rect x="350" y="460" width="220" height="110" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="460" y="485" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#171717">Property</text>
+  <text x="460" y="510" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6B7280">primary ’ excluded</text>
+  <text x="460" y="530" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">investment ’ value</text>
+  <text x="460" y="550" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">rental ’ income</text>
+
+  <rect x="640" y="410" width="220" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="750" y="440" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Business ’ inventory</text>
+
+  <rect x="350" y="590" width="220" height="64" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="460" y="615" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Receivables</text>
+  <polygon points="460,630 485,650 460,670 435,650" fill="#FFFFFF" stroke="#351A75" stroke-width="2"/>
+  <text x="460" y="654" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#171717">repaid?</text>
+
+  <line x1="460" y1="670" x2="460" y2="720" stroke="#351A75" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 3 -->
+  <rect x="240" y="720" width="440" height="56" rx="16" fill="#351A75"/>
+  <text x="460" y="754" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Step 3: Liabilities</text>
+
+  <rect x="120" y="800" width="280" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="260" y="830" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">Enter debts</text>
+
+  <rect x="520" y="800" width="280" height="48" rx="12" fill="#F3EFFD" stroke="#351A75"/>
+  <text x="660" y="830" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#171717">OR &quot;No debts&quot; toggle</text>
+
+  <line x1="460" y1="860" x2="460" y2="900" stroke="#351A75" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 4 -->
+  <rect x="270" y="900" width="380" height="56" rx="16" fill="#351A75"/>
+  <text x="460" y="934" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Step 4: Result</text>
+
+  <line x1="360" y1="956" x2="280" y2="1000" stroke="#351A75" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="560" y1="956" x2="640" y2="1000" stroke="#351A75" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="1000" width="320" height="72" rx="16" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+  <text x="280" y="1030" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#059669">Eligible</text>
+  <text x="280" y="1055" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#171717">Zakat amount + breakdown</text>
+
+  <rect x="480" y="1000" width="320" height="72" rx="16" fill="#F9FAFB" stroke="#6B7280" stroke-width="2"/>
+  <text x="640" y="1030" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280">Ineligible</text>
+  <text x="640" y="1055" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#171717">Below Nisab message</text>
+
+  <text x="460" y="1120" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6B7280">Purple = main steps · Light purple = sub-steps · Green = eligible · Gray = excluded</text>
+</svg>
