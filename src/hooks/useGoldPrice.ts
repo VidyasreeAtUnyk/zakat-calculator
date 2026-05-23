@@ -57,8 +57,8 @@ export function useGoldPrice(): GoldPriceState {
 
     try {
       const [goldUsd, silverUsd] = await Promise.all([
-        fetchSpotPrice('https://api.metals.live/v1/spot/gold'),
-        fetchSpotPrice('https://api.metals.live/v1/spot/silver'),
+        fetchSpotPrice('https://api.gold-api.com/price/XAU'),
+        fetchSpotPrice('https://api.gold-api.com/price/XAG'),
       ]);
 
       if (goldUsd === null) {
