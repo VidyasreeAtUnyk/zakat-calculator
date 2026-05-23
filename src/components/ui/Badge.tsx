@@ -7,10 +7,10 @@ export interface BadgeProps {
 }
 
 const variantClasses = {
-  live: 'bg-mal-success-light text-mal-success',
-  estimated: 'bg-mal-warning-light text-mal-warning',
-  success: 'bg-mal-success-light text-mal-success',
-  warning: 'bg-mal-warning-light text-mal-warning',
+  live: 'bg-mal-success-light text-mal-success-dark',
+  estimated: 'bg-mal-warning-light text-mal-warning-dark',
+  success: 'bg-mal-success-light text-mal-success-dark',
+  warning: 'bg-mal-warning-light text-mal-warning-dark',
   neutral: 'bg-mal-gray-light text-mal-gray-dark',
 };
 

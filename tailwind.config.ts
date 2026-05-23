@@ -22,8 +22,10 @@ const config: Config = {
           border: '#E5E7EB',
           success: '#059669',
           'success-light': '#ECFDF5',
+          'success-dark': '#065F46',
           warning: '#D97706',
           'warning-light': '#FFFBEB',
+          'warning-dark': '#92400E',
         },
       },
       fontFamily: {
