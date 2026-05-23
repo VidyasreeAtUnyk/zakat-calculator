@@ -220,7 +220,7 @@ export function StepResult({ result, onRecalculate, onPrint }: StepResultProps) 
 
           <div className="overflow-x-auto">
 
-            <table className="breakdown-table w-full min-w-[320px] text-left text-sm">
+            <table className="breakdown-table w-full text-left text-sm">
               <thead>
                 <tr className="border-b border-mal-border text-mal-gray">
                   <th className="pb-2 pr-2">Asset</th>
