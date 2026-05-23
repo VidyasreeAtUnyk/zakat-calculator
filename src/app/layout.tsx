@@ -27,6 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://api.gold-api.com" />
+        <link rel="dns-prefetch" href="https://api.gold-api.com" />
+      </head>
       <body className={`${inter.variable} ${notoArabic.variable} font-sans`}>
         <div className="flex min-h-screen flex-col">
           <Header />

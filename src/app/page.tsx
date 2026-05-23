@@ -1,17 +1,57 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useEffect, useRef } from 'react';
-import { StepAssetDetails } from '@/components/wizard/StepAssetDetails';
-import { StepAssetSelector } from '@/components/wizard/StepAssetSelector';
-import { StepLiabilities } from '@/components/wizard/StepLiabilities';
-import { StepResult } from '@/components/wizard/StepResult';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { ProgressBar } from '@/components/ui/ProgressBar';
-import { ZakatInfo } from '@/components/ui/ZakatInfo';
+import {
+  WizardSkeleton,
+  ZakatInfoSkeleton,
+} from '@/components/ui/WizardSkeleton';
 import { formatAEDSafe } from '@/lib/formatters';
 import { useZakatCalculator } from '@/hooks/useZakatCalculator';
+
+const ZakatInfo = dynamic(
+  () =>
+    import('@/components/ui/ZakatInfo').then((mod) => ({
+      default: mod.ZakatInfo,
+    })),
+  { loading: () => <ZakatInfoSkeleton />, ssr: false }
+);
+
+const StepAssetSelector = dynamic(
+  () =>
+    import('@/components/wizard/StepAssetSelector').then((mod) => ({
+      default: mod.StepAssetSelector,
+    })),
+  { loading: () => <WizardSkeleton />, ssr: false }
+);
+
+const StepAssetDetails = dynamic(
+  () =>
+    import('@/components/wizard/StepAssetDetails').then((mod) => ({
+      default: mod.StepAssetDetails,
+    })),
+  { loading: () => <WizardSkeleton />, ssr: false }
+);
+
+const StepLiabilities = dynamic(
+  () =>
+    import('@/components/wizard/StepLiabilities').then((mod) => ({
+      default: mod.StepLiabilities,
+    })),
+  { loading: () => <WizardSkeleton />, ssr: false }
+);
+
+const StepResult = dynamic(
+  () =>
+    import('@/components/wizard/StepResult').then((mod) => ({
+      default: mod.StepResult,
+    })),
+  { loading: () => <WizardSkeleton />, ssr: false }
+);
 
 export default function Home() {
   const wizard = useZakatCalculator();

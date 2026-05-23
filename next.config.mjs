@@ -30,13 +30,11 @@ const nextConfig = {
               key: 'Content-Security-Policy',
               value: [
                 "default-src 'self'",
-                // Next.js needs unsafe-inline for styles
-                "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-                // Google Fonts
-                "font-src 'self' https://fonts.gstatic.com",
-                // Allow gold API call
+                "style-src 'self' 'unsafe-inline'",
+                // fonts served from self via next/font
+                "font-src 'self'",
+                // gold API call
                 "connect-src 'self' https://api.gold-api.com",
-                // Next.js scripts
                 "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
                 "img-src 'self' data:",
                 "frame-ancestors 'none'",

@@ -56,6 +56,8 @@ export function useGoldPrice(): GoldPriceState {
     setError(false);
 
     try {
+      await new Promise((resolve) => setTimeout(resolve, 800));
+
       const [goldUsd, silverUsd] = await Promise.all([
         fetchSpotPrice('https://api.gold-api.com/price/XAU'),
         fetchSpotPrice('https://api.gold-api.com/price/XAG'),

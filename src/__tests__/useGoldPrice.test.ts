@@ -16,6 +16,11 @@ function expectedAedPerGram(usdPerOz: number): number {
 describe('useGoldPrice', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
   });
 
   it('returns loading state initially', () => {
@@ -41,6 +46,8 @@ describe('useGoldPrice', () => {
 
     const { result } = renderHook(() => useGoldPrice());
 
+    await jest.advanceTimersByTimeAsync(800);
+
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
     });
@@ -57,6 +64,8 @@ describe('useGoldPrice', () => {
     mockFetch.mockRejectedValueOnce(new Error('Network error'));
 
     const { result } = renderHook(() => useGoldPrice());
+
+    await jest.advanceTimersByTimeAsync(800);
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
@@ -79,6 +88,8 @@ describe('useGoldPrice', () => {
     });
 
     const { result } = renderHook(() => useGoldPrice());
+
+    await jest.advanceTimersByTimeAsync(800);
 
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
