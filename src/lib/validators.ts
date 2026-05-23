@@ -2,6 +2,9 @@ export const MAX_ASSET_VALUE = 999_999_999;
 export const MAX_GRAMS = 100_000;
 
 export function sanitizeNumberInput(value: string): string {
+  if (value.trim().startsWith('-')) {
+    return '0';
+  }
   return value
     .replace(/[^0-9.]/g, '')
     .replace(/^0+(\d)/, '$1')

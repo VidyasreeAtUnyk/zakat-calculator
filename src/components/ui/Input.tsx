@@ -121,7 +121,11 @@ export function Input({
           {...props}
         />
       </div>
-      {displayError && <p className="text-xs text-red-600">{displayError}</p>}
+      {displayError && (
+        <p className="text-xs text-red-600" role="alert" aria-live="polite">
+          {displayError}
+        </p>
+      )}
     </div>
   );
 }

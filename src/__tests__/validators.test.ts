@@ -36,6 +36,10 @@ describe('sanitizeNumberInput', () => {
     expect(sanitizeNumberInput('')).toBe('');
   });
 
+  it('blocks negative values', () => {
+    expect(sanitizeNumberInput('-100')).toBe('0');
+  });
+
   it('handles scientific notation input', () => {
     expect(sanitizeNumberInput('1e10')).toBe('110');
   });

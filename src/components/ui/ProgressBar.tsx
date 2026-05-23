@@ -18,6 +18,7 @@ export function ProgressBar({
           className="h-full rounded-full bg-mal-purple transition-all duration-300"
           style={{ width: `${progress}%` }}
           role="progressbar"
+          aria-label="Wizard progress"
           aria-valuenow={currentStep + 1}
           aria-valuemin={1}
           aria-valuemax={totalSteps}
