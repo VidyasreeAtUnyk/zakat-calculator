@@ -8,16 +8,17 @@ test.describe('Ineligible result', () => {
     await expect(page.getByText('No Zakat Due')).toBeVisible();
     await expect(page.getByText(/below the Nisab threshold/i)).toBeVisible();
 
-    await page.getByRole('button', { name: /Recalculate/i }).click();
-    await expect(
-      page.getByRole('heading', { name: /What assets do you own/i })
-    ).toBeVisible();
-
+    await page.waitForTimeout(500);
     await screenshotIf(
       page,
       testInfo.project.name,
       'Desktop Chrome',
       'e2e/screenshots/08-result-ineligible.png'
     );
+
+    await page.getByRole('button', { name: /Recalculate/i }).click();
+    await expect(
+      page.getByRole('heading', { name: /What assets do you own/i })
+    ).toBeVisible();
   });
 });

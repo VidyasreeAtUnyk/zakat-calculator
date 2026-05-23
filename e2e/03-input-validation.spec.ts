@@ -27,6 +27,13 @@ test.describe('Cash input validation', () => {
     await input.fill('1000000000');
     await expect(page.getByText(/Maximum value is AED 999,999,999/i)).toBeVisible();
 
+    await screenshotIf(
+      page,
+      testInfo.project.name,
+      'Desktop Chrome',
+      'e2e/screenshots/03-validation.png'
+    );
+
     await input.fill('');
     await input.fill('1,000,000');
     await expect(input).toHaveValue('1000000');
@@ -39,12 +46,5 @@ test.describe('Cash input validation', () => {
 
     await input.fill('');
     await expect(input).toHaveValue('0');
-
-    await screenshotIf(
-      page,
-      testInfo.project.name,
-      'Desktop Chrome',
-      'e2e/screenshots/03-validation.png'
-    );
   });
 });

@@ -74,6 +74,7 @@ test.describe('Edge cases', () => {
     await finishWithNoDebts(page);
     await expect(page.getByText('Zakat is due on your wealth')).toBeVisible();
 
+    await page.waitForTimeout(500);
     await screenshotIf(
       page,
       testInfo.project.name,

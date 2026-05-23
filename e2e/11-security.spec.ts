@@ -45,6 +45,8 @@ test.describe('Security', () => {
 
     expect(response?.headers()['x-frame-options']).toBe('DENY');
 
+    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(500);
     await screenshotIf(
       page,
       testInfo.project.name,

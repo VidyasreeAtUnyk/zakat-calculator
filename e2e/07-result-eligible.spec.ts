@@ -15,16 +15,17 @@ test.describe('Eligible result', () => {
     ).toBeVisible();
     await expect(page.getByRole('button', { name: /Recalculate/i })).toBeVisible();
 
-    await page.getByRole('button', { name: /Recalculate/i }).click();
-    await expect(
-      page.getByRole('heading', { name: /What assets do you own/i })
-    ).toBeVisible();
-
+    await page.waitForTimeout(500);
     await screenshotIf(
       page,
       testInfo.project.name,
       'Desktop Chrome',
       'e2e/screenshots/07-result-eligible.png'
     );
+
+    await page.getByRole('button', { name: /Recalculate/i }).click();
+    await expect(
+      page.getByRole('heading', { name: /What assets do you own/i })
+    ).toBeVisible();
   });
 });

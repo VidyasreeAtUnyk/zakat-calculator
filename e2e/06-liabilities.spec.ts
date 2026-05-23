@@ -47,6 +47,13 @@ test.describe('Liabilities step', () => {
     ).toBeVisible();
     await expect(page.getByText(/AED 90,000/)).toBeVisible();
 
+    await screenshotIf(
+      page,
+      testInfo.project.name,
+      'Desktop Chrome',
+      'e2e/screenshots/06-liabilities.png'
+    );
+
     await page.getByRole('button', { name: /Recalculate/i }).click();
     await page.getByRole('button', { name: /Continue →/i }).click();
     await fillCashAmount(page, '100000');
@@ -54,12 +61,5 @@ test.describe('Liabilities step', () => {
     await page.getByLabel(/Outstanding loans due this year/i).fill('200000');
     await page.getByRole('button', { name: /See my Zakat result/i }).click();
     await expect(page.getByText('No Zakat Due')).toBeVisible();
-
-    await screenshotIf(
-      page,
-      testInfo.project.name,
-      'Desktop Chrome',
-      'e2e/screenshots/06-liabilities.png'
-    );
   });
 });
