@@ -19,19 +19,22 @@ export const metadata: Metadata = {
   title: 'Mal Zakat Calculator',
   description:
     'A guided, step-by-step Zakat calculator based on Islamic scholarly consensus',
-    keywords: 'Zakat, calculator, Islamic finance, Nisab, halal',
-    openGraph: {
-      title: 'Mal Zakat Calculator',
-      description: 'Calculate your Zakat accurately with live gold prices.',
-      url: 'https://zakat-calculator-ruby.vercel.app',
-      siteName: 'Mal Zakat Calculator',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'Mal Zakat Calculator',
-      description: 'Calculate your Zakat accurately with live gold prices.',
-    }
+  icons: {
+    icon: '/icon.svg',
+  },
+  keywords: 'Zakat, calculator, Islamic finance, Nisab, halal',
+  openGraph: {
+    title: 'Mal Zakat Calculator',
+    description: 'Calculate your Zakat accurately with live gold prices.',
+    url: 'https://zakat-calculator-ruby.vercel.app',
+    siteName: 'Mal Zakat Calculator',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mal Zakat Calculator',
+    description: 'Calculate your Zakat accurately with live gold prices.',
+  }
 };
 
 export default function RootLayout({
